@@ -1,0 +1,103 @@
+<body>
+
+<h1>Państwa świata</h1>
+
+
+<ul>
+  <li><b>Kraj:</b> {{country}}</li>
+  <li><b>Stolica:</b> {{capital}}</li>
+  <li><b>Obecny prezydent:</b> {{president}}</li>
+  <li><b>Religia:</b> {{religion}}</li>
+  <li><b>Populacja (mln):</b> {{population}}</li>
+  <li><b>Waluta:</b> {{currency}}</li>
+  <li><b>Góry:</b> {{mountains}}</li>
+  <li><b>Rzeka:</b> {{river}}</li>
+  <li><b>Morze/Ocean:</b> {{sea}}</li>
+  <li><b>Atrakcje:</b> {{attractions.first}}, {{attractions.second}}, {{attractions.third}}</li>
+</ul>
+
+<hr/>
+
+<div>
+  <button (click)="changeEditMode()"><b>Edytuj dane</b></button>
+</div>
+
+<div *ngIf="editMode">
+  <h3>Edytuj dane:</h3>
+  <form id="editmode">
+    <div style="margin-bottom: 3px">
+      <label style="margin-right: 5px">Kraj:</label>
+      <input type="text" [(ngModel)]="country" name="country">
+    </div>
+    <div style="margin-bottom: 3px">
+      <label style="margin-right: 5px">Stolica:</label>
+      <input type="text" [(ngModel)]="capital" name="capital">
+    </div>
+    <div style="margin-bottom: 3px">
+      <label style="margin-right: 5px">Obecny Prezydent:</label>
+      <input type="text" [(ngModel)]="president" name="president">
+    </div>
+    <div style="margin-bottom: 3px">
+      <label style="margin-right: 5px">Religia:</label>
+      <input type="text" [(ngModel)]="religion" name="religion">
+    </div>
+    <div style="margin-bottom: 3px">
+      <label style="margin-right: 5px">Populacja (mln):</label>
+      <input type="number" [(ngModel)]="population" name="population">
+    </div>
+    <div style="margin-bottom: 3px">
+      <label style="margin-right: 5px">Waluta:</label>
+      <input type="text" [(ngModel)]="currency" name="currency">
+    </div>
+    <div style="margin-bottom: 3px">
+      <label style="margin-right: 5px">Góry:</label>
+      <input type="text" [(ngModel)]="mountains" name="mountains">
+    </div>
+    <div style="margin-bottom: 3px">
+      <label style="margin-right: 5px">Rzeki:</label>
+      <input type="text" [(ngModel)]="river" name="river">
+
+    </div>
+    <div style="margin-bottom: 3px">
+      <label style="margin-right: 5px">Morza/Oceany:</label>
+      <input type="text" [(ngModel)]="sea" name="sea">
+
+    </div>
+    <div style="margin-bottom: 3px">
+      <label style="margin-right: 5px">Atrakcje:</label>
+      <input type="text" [(ngModel)]="attractions.first" name="attractionFirst">
+      <input type="text" [(ngModel)]="attractions.second" name="attractionSecond">
+      <input type="text" [(ngModel)]="attractions.third" name="attractionThird">
+    </div>
+
+  </form>
+</div>
+
+<hr/>
+
+<form (submit)="addCity(city.value)">
+  <div>
+    <label for="taskField" style="margin-left: 40px">City: </label>
+    <input type="text" #city id="taskField">
+  </div>
+</form>
+
+<button (click)="addCity(city.value)" style="margin-left: 40px"><b>Dodaj miasto</b></button>
+
+
+
+<ul>
+  <li *ngFor="let city of cities; let i = index">
+    <button (click)="deleteCity(city)"><b>Usuń miasto</b></button>{{i+1}}.{{city}}
+  </li>
+</ul>
+</body>
+
+
+
+
+
+
+
+
+

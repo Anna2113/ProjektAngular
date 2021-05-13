@@ -1,0 +1,32 @@
+body{
+  background-color: aqua;
+  border-radius: 20px;
+  padding: 20px;
+}
+h1{
+  text-align: center;
+  font-family: fantasy;
+}
+ul{
+  list-style-type: none;
+}
+#editmode{
+  text-align: left;
+  margin-left: 30px;
+  margin-bottom: 50px;
+}
+input{
+  border-radius: 5px;
+  border-color: blue;
+  margin-right: 2px;
+  width: 200px;
+}
+button{
+  margin-right: 5px;
+  margin-top: 2px;
+  border-radius: 10px;
+  background-color: blue;
+  font-size: 15px;
+  font-style: italic;
+}
+
